@@ -1,5 +1,5 @@
 node {
-   def registryProjet='registry.gitlab.com/xavki/presentations-jenkins/wartest'
+   def registryProjet='registry.gitlab.com/knaidil/presentation-jenkins-docker/wartest'
    def IMAGE="${registryProjet}:version-${env.BUILD_ID}"
     stage('Build - Clone') {
           git 'https://github.com/priximmo/war-build-docker.git'
@@ -26,7 +26,7 @@ node {
           }
     }
     stage('Deploy - Clone') {
-          git 'https://github.com/priximmo/jenkins-ansible-docker.git'
+          git 'https://github.com/knaidil/jenkins-ansible-docker.git'
     }
     stage('Deploy - End') {
       ansiblePlaybook (
